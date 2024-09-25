@@ -2,14 +2,15 @@
 
 CC = clang
 CFLAGS = -Wall -Wextra -Werror -std=c99
+OUTPUT = build/example
 
 all: run
 
 run: build
-	./build/example
+	./$(OUTPUT)
 
-build: example.c logs.h logs.c
-	$(CC) $(CFLAGS) -o ./build/example example.c logs.c
+build: src/*.h src/*.c
+	$(CC) $(CFLAGS) -o $(OUTPUT) src/*.c
 
 clean:
-	rm -f build/example
+	rm -f $(OUTPUT)
