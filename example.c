@@ -1,14 +1,12 @@
 #include "logs.h"
 
 int main() {
-    LOG_INFO("Application started");
+    logs_init(LOG_OUTPUT_STDOUT, 0);
 
-    LOG_DEBUG("This is a debug message");
-    LOG_INFO("This is an info message");
-    LOG_WARN("This is a warning message");
-    LOG_ERROR("This is an error message");
+    log_debug("This is a debug message");
+    log_info("This is an info message");
+    log_warn("This is a warning message");
+    log_error("This is an error message");
 
-    LOG_INFO("Application finished");
-    
     return 0;
 }
